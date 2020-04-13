@@ -139,13 +139,14 @@
               "translate(" + margin.left + "," + margin.top + ")");
 
       // Labels of row and columns
-      var myGroups = ["danceability", "energy", "key", "loudness", "mode",
-      "speechiness", "acousticness", "instrumentalness", "liveness", "valence",
-      "tempo", "target"]
-      var myVars = ["danceability", "energy", "key", "loudness", "mode",
-      "speechiness", "acousticness", "instrumentalness", "liveness", "valence",
-      "tempo", "target"]
-
+      //var myGroups = ["danceability", "energy", "key", "loudness", "mode",
+      //"speechiness", "acousticness", "instrumentalness", "liveness", "valence",
+      //"tempo", "target"]
+      //var myVars = ["danceability", "energy", "key", "loudness", "mode",
+      //"speechiness", "acousticness", "instrumentalness", "liveness", "valence",
+      //"tempo", "target"]
+      var myGroups = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+      var myVars = ["v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10"]
       //myGroups = "<span style='color:#ffffff'>myGroups</span>";
 
       // Build X scales and axis:
@@ -172,7 +173,7 @@
 
 
       //Read the data
-      d3.csv("https://raw.githubusercontent.com/Kmooyang/halfqueueunderflow/master/musicFrom2010sNoArtists.csv", function(data) {
+      d3.csv("https://raw.githubusercontent.com/Kmooyang/halfqueueunderflow/master/dataset-of-10s.csv", function(data) {
 
         // create a tooltip
         var tooltip = d3.select("#my_dataviz")
