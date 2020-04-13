@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<!-- <script src="https://d3js.org/d3.v4.js"></script>-->
+
+<!-- Create a div where the graph will take place -->
+<!--<div id="my_dataviz"></div>-->
+
+
+
+<html>
+	<head>
+    <style>
+      #my_dataviz {
+      width: 100%;
+      text-align: center;
+      background-color: #a6a6a6
+      }
+    </style>
+		<title>Yo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<!--<a href="index.html" class="logo">Some Spotify Stuff</a>-->
+            <h1>Some Spotify Stuff</h1>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+            <div id="my_dataviz" width="100%"></div>
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>This is a<br />
+									Generic Page</h1>
+									<!--<p></p>-->
+								</header>
+								<!--<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
+								<p> </p>
+							--></section>
+
+					</div>
+
+				<!-- Footer -->
+					<!--<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>1234 Somewhere Road #87257<br />
+								Nashville, TN 00000-0000</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">info@untitled.tld</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>-->
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+      <script src="https://d3js.org/d3.v4.js"></script>
+      <script>
+
+      // set the dimensions and margins of the graph
+      var margin = {top: 100, right: 100, bottom: 100, left: 100},
+        //width = 450 - margin.left - margin.right,
+        width = 1100 - margin.left - margin.right,
+        height = 600 - margin.top - margin.bottom;
+
+      // append the svg object to the body of the page
+      var svg = d3.select("#my_dataviz")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+
+      // Labels of row and columns
+      var tempo = ["46.76-63.40", "63.41-80.05", "80.06-96.70", "96.71-113.35", "113.36-129.99", "130.00-146.64", "146.65-163.29", "163.30-179.94", "179.95-196.59", "196.59-213.23"]
+      var key = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+      //myGroups = "<span style='color:#ffffff'>myGroups</span>";
+
+      // Build X scales and axis:
+      var x = d3.scaleBand()
+        .range([ 0, width ])
+        .domain(tempo)
+        .padding(0.01);
+      svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x))
+
+      // Build X scales and axis:
+      var y = d3.scaleBand()
+        .range([ height, 0 ])
+        .domain(key)
+        .padding(0.01);
+      svg.append("g")
+        .call(d3.axisLeft(y));
+
+      // Build color scale
+      var myColor = d3.scaleLinear()
+        .range(["white", "#003366"])
+        .domain([1,100])
+
+
+      //Read the data
+      d3.csv("https://raw.githubusercontent.com/Kmooyang/halfqueueunderflow/master/dataset-of-10s.csv", function(data) {
+
+        // create a tooltip
+        var tooltip = d3.select("#my_dataviz")
+          .append("div")
+          .style("opacity", 0)
+          .attr("class", "tooltip")
+          .style("background-color", "white")
+          .style("border", "solid")
+          .style("border-width", "2px")
+          .style("border-radius", "5px")
+          .style("padding", "5px")
+
+        // Three function that change the tooltip when user hover / move / leave a cell
+        var mouseover = function(d) {
+          tooltip.style("opacity", 1)
+        }
+        var mousemove = function(d) {
+          tooltip
+            .html("The exact value of<br>this cell is: " + d.tempo)
+            .style("left", (d3.mouse(this)[0]+70) + "px")
+            .style("top", (d3.mouse(this)[1]) + "px")
+        }
+        var mouseleave = function(d) {
+          tooltip.style("opacity", 0)
+        }
+
+        // add the squares
+        svg.selectAll()
+          .data(data, function(d) {return d.group+':'+d.variable;})
+          .enter()
+          .append("rect")
+            .attr("x", function(d) { return x(d.tempo) })
+            .attr("y", function(d) { return y(d.key) })
+            .attr("width", x.bandwidth() )
+            .attr("height", y.bandwidth() )
+            .style("fill", function(d) { return myColor(d.value)} )
+          .on("mouseover", mouseover)
+          .on("mousemove", mousemove)
+          .on("mouseleave", mouseleave)
+      })
+      </script>
+	</body>
+</html>
