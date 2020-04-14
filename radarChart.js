@@ -10,6 +10,7 @@ function RadarChart(id, data, options) {
 	 w: 600,				//Width of the circle
 	 h: 600,				//Height of the circle
 	 margin: {top: 20, right: 20, bottom: 20, left: 20}, //The margins of the SVG
+	 legendPosition: {x: 20, y: 20}, // the position of the legend, from the top-left corner of the svg
 	 levels: 3,				//How many levels or inner circles should there be drawn
 	 maxValue: 0, 			//What is the value that the biggest circle will represent
 	 labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
@@ -20,6 +21,10 @@ function RadarChart(id, data, options) {
 	 strokeWidth: 2, 		//The width of the stroke around each blob
 	 roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
 	 color: d3.scale.category10()	//Color function
+	 axisName: "axis",
+	 areaName:"areaName",
+	 value: "value",
+	 sortAreas: true,
 	};
 
 	//Put all of the options into a variable called cfg
@@ -28,6 +33,12 @@ function RadarChart(id, data, options) {
 		if('undefined' !== typeof options[i]){ cfg[i] = options[i]; }
 	  }//for i
 	}//if
+	//Map the fields specified in the configuration
+	// to the axis and value variables
+	var axisName = cfg["axisName"],
+			areaName = cfg["areaName"],
+			value = cfg["value"];
+
 
 	//If the supplied maxValue is smaller than the actual one, replace by the max in the data
 	var maxValue = Math.max(cfg.maxValue, d3.max(data, function(i){return d3.max(i.map(function(o){return o.value;}))}));
@@ -268,6 +279,27 @@ function RadarChart(id, data, options) {
 		}
 	  });
 	}//wrap
+	svg.append("g")
+	.attr("class", "legendOrdinal")
+	.attr("transform", "translate(" + cfg["legendPosition"]["x"] + "," + cfg["legendPosition"]["y"] + ")");
+
+	function cellover(d) {
+			//Dim all blobs
+			d3.selectAll(".radarArea")
+				.transition().duration(200)
+				.style("fill-opacity", 0.1);
+			//Bring back the hovered over blob
+			d3.select("." + data[d][0][areaName].replace(/\s+/g, ''))
+				.transition().duration(200)
+				.style("fill-opacity", 0.7);
+	}
+		// on mouseout for the legend symbol
+	function cellout() {
+		//Bring back all blobs
+		d3.selectAll(".radarArea")
+			.transition().duration(200)
+			.style("fill-opacity", cfg.opacityArea);
+	}
 	svg.append("g")
 	.attr("class", "legendOrdinal")
 	.attr("transform", "translate(" + cfg["legendPosition"]["x"] + "," + cfg["legendPosition"]["y"] + ")");
