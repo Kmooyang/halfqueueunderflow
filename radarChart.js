@@ -313,11 +313,16 @@ function RadarChart(id, data, options) {
 			//Dim all blobs
 			d3.selectAll(".radarArea")
 				.transition().duration(200)
-				.style("fill-opacity", 0);
+				.style("fill-opacity", 0.1);
 			//Bring back the hovered over blob
-			d3.select("." + data[d][0][areaName].replace(/\s+/g, ''))
+			//d3.select("." + data[d][0][areaName].replace(/\s+/g, ''))
+			.on('mouseover', function (d,i){
+				console.log("d", d);
+				console.log("this", this);
+			d3.select(this)
 				.transition().duration(200)
 				.style("fill-opacity", 0.8);
+			}
 	}
 
 	// on mouseout for the legend symbol
