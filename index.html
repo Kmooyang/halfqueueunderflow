@@ -11,7 +11,7 @@
 		<!-- D3.js -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.3.0/d3-legend.js" charset="utf-8"></script>
-
+		
 		<style>
 			body {
 				font-family: 'Open Sans', sans-serif;
@@ -22,35 +22,35 @@
 				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 				cursor: default;
 			}
-
+			
 			.tooltip {
 				fill: #333333;
 			}
 		</style>
-
+	
 	</head>
 	<body>
 
 		<div class="radarChart"></div>
 
-		<script src="radarChart.js"></script>
+		<script src="radarChart.js"></script>	
 		<script>
-			//////////////////////////////////////////////////////////////
-			//////////////////////// Set-Up //////////////////////////////
-			//////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////// 
+			//////////////////////// Set-Up ////////////////////////////// 
+			////////////////////////////////////////////////////////////// 
 
 			var margin = {top: 100, right: 100, bottom: 100, left: 100},
 				legendPosition = {x: 25, y: 25},
 				width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
 				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
-
-			//////////////////////////////////////////////////////////////
-			//////////////////// Draw the Chart //////////////////////////
-			//////////////////////////////////////////////////////////////
+					
+			////////////////////////////////////////////////////////////// 
+			//////////////////// Draw the Chart ////////////////////////// 
+			////////////////////////////////////////////////////////////// 
 
 			var color = d3.scale.ordinal()
 				.range(["#EDC951","#CC333F","#00A0B0","#b000a0","#42f5b9","#f5aa42"]);
-
+				
 			var radarChartOptions = {
 			  w: width,
 			  h: height,
@@ -70,7 +70,7 @@
 			d3.json("spotifyHits.json", function(error, data){
 				RadarChart(".radarChart", data, radarChartOptions);
 			});
-
+			
 		</script>
 	</body>
 </html>
