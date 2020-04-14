@@ -10,7 +10,7 @@
 
 		<!-- D3.js -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-		
+
 		<style>
 			body {
 				font-family: 'Open Sans', sans-serif;
@@ -21,38 +21,38 @@
 				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 				cursor: default;
 			}
-			
+
 			.legend {
 				font-family: 'Raleway', sans-serif;
 				fill: #333333;
 			}
-			
+
 			.tooltip {
 				fill: #333333;
 			}
 		</style>
-	
+
 	</head>
 	<body>
 
 		<div class="radarChart"></div>
 
-		<script src="radarChart.js"></script>	
+		<script src="radarChart.js"></script>
 		<script>
-      
+
       /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
-      
-			////////////////////////////////////////////////////////////// 
-			//////////////////////// Set-Up ////////////////////////////// 
-			////////////////////////////////////////////////////////////// 
+
+			//////////////////////////////////////////////////////////////
+			//////////////////////// Set-Up //////////////////////////////
+			//////////////////////////////////////////////////////////////
 
 			var margin = {top: 100, right: 100, bottom: 100, left: 100},
 				width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
 				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
-					
-			////////////////////////////////////////////////////////////// 
-			////////////////////////// Data ////////////////////////////// 
-			////////////////////////////////////////////////////////////// 
+
+			//////////////////////////////////////////////////////////////
+			////////////////////////// Data //////////////////////////////
+			//////////////////////////////////////////////////////////////
 
 			var data = [
 					  [//2010
@@ -62,7 +62,7 @@
 						{axis:"average_acousticness",value:0.2169284218521424},
 						{axis:"average_instrumentalness",value:0.1652927064520163},
 						{axis:"average_liveness",value:0.19669964051266073},
-						{axis:"average_valence",value:0.4437342450765877}			
+						{axis:"average_valence",value:0.4437342450765877}
 					  ],[//2000
 						{axis:"average_danceability",value:0.5429307731607653},
 						{axis:"average_energy",value:0.6945108549046334},
@@ -105,13 +105,13 @@
 						{axis:"average_valence",value:0.574962983105761}
 					  ]
 					];
-			////////////////////////////////////////////////////////////// 
-			//////////////////// Draw the Chart ////////////////////////// 
-			////////////////////////////////////////////////////////////// 
+			//////////////////////////////////////////////////////////////
+			//////////////////// Draw the Chart //////////////////////////
+			//////////////////////////////////////////////////////////////
 
 			var color = d3.scale.ordinal()
 				.range(["#EDC951","#CC333F","#00A0B0","#b000a0","#42f5b9","#f5aa42"]);
-				
+
 			var radarChartOptions = {
 			  w: width,
 			  h: height,
