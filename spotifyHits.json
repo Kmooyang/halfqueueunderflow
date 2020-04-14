@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
 	{
 		"key":"2010",
 		"values":[
@@ -23,11 +24,52 @@
 		{
 			"year":"2010","change":"Valence","value":0.4437342450765877"
 		}
+=======
+	{	
+		"key":"2010",
+		"values":[
+			{
+				"year":"2010",
+				"categories":"Danceability",
+				"value":0.6416333229134105
+			},
+			{
+				"year":"2010",
+				"categories":"Energy",
+				"value":0.6823673022819613
+			},
+			{
+				"year":"2010",
+				"categories":"Speechiness",
+				"value":0.10752441387933749
+			},
+			{
+				"year":"2010",
+				"categories":"Acousticness",
+				"value":0.16217276355110966
+			},
+			{
+				"year":"2010",
+				"categories":"Instrumentalness",
+				"value":0.006057000468896533
+			},
+			{
+				"year":"2010",
+				"categories":"Liveness",
+				"value":0.18629753047827408
+			},
+			{
+				"year":"2010",
+				"categories":"Valence",
+				"value":0.49381297280400166
+			}
+>>>>>>> 804725c48d9001f74bb1c4da60c4ed9ffadcdc2a
 		]
 	},
 	{
 		"key":"2000",
 		"values":[
+<<<<<<< HEAD
 		{
 			"year":"2000","change":"Danceability","value":0.5429307731607653
 		},
@@ -49,11 +91,49 @@
 		{
 			"year":"2000","change":"Valence","value":0.4822621423705721
 		}
+=======
+			{
+				"year":"2000",
+				"categories":"Danceability",
+				"value":0.6300490463215248
+			},
+			{
+				"year":"2000",
+				"categories":"Energy",
+				"value":0.7146076294277922
+			},
+			{	
+				"year":"2000",
+				"categories":"Speechiness",
+				"value":0.09778470708446874
+			},
+			{	
+				"year":"2000",
+				"categories":"Acousticness",
+				"value":0.14800758552452314
+			},
+			{
+				"year":"2000",
+				"categories":"Instrumentalness",
+				"value":0.008858021856267028
+			},
+			{
+				"year":"2000",
+				"categories":"Liveness",
+				"value":0.18390715258855575
+			},
+			{
+				"year":"2000",
+				"categories":"Valence",
+				"value":0.5537907697547688
+			}
+>>>>>>> 804725c48d9001f74bb1c4da60c4ed9ffadcdc2a
 		]
 	},
 	{
 		"key":"1990",
 		"values":[
+<<<<<<< HEAD
 		{
 			"year":"1990","change":"Danceability","value":0.5668930615942046
 		},
@@ -75,11 +155,49 @@
 		{
 			"year":"1990","change":"Valence","value":0.5376854891304355
 		}
+=======
+			{
+				"year":"1990",
+				"categories":"Danceability",
+				"value":0.6487688405797085
+			},
+			{
+				"year":"1990",
+				"categories":"Energy",
+				"value":0.6575423188405797
+			},
+			{
+				"year":"1990",
+				"categories":"Speechiness",
+				"value":0.07815242753623176
+			},
+			{
+				"year":"1990",
+				"categories":"Acousticness",			
+				"value":0.16951094813043516
+			},
+			{
+				"year":"1990",
+				"categories":"Instrumentalness",
+				"value":0.029813553264492722
+			},
+			{
+				"year":"1990",
+				"categories":"Liveness",
+				"value":0.17935572463768154
+			},
+			{
+				"year":"1990",
+				"categories":"Valence",
+				"value":0.58161713768116
+			}
+>>>>>>> 804725c48d9001f74bb1c4da60c4ed9ffadcdc2a
 		]
 	},
 	{
 		"key":"1980",
 		"values":[
+<<<<<<< HEAD
 		{
 			"year":"1980","change":"Danceability","value":0.564258193398957
 		},
@@ -101,11 +219,49 @@
 		{	
 			"year":"1980","change":"Valence","value":0.587921886218874
 		}
+=======
+			{
+				"year":"1980",
+				"categories":"Danceability",
+				"value":0.6244435437174296
+			},
+			{
+				"year":"1980",
+				"categories":"Energy",
+				"value":0.6530306601042272
+			},
+			{
+				"year":"1980",
+				"categories":"Speechiness",
+				"value":0.04663465547191664
+			},
+			{
+				"year":"1980",
+				"categories":"Acousticness",
+				"value":0.20457883934568655
+			},
+			{
+				"year":"1980",
+				"categories":"Instrumentalness",
+				"value":0.028438554221192774
+			},
+			{
+				"year":"1980",
+				"categories":"Liveness",
+				"value":0.1826191082802549
+			},
+			{
+				"year":"1980",
+				"categories":"Valence",
+				"value":0.6570605385060782
+			}
+>>>>>>> 804725c48d9001f74bb1c4da60c4ed9ffadcdc2a
 		]
 	},
 	{
 		"key":"1970",
 		"values":[
+<<<<<<< HEAD
 		{
 			"year":"1970","change":"Danceability","value":0.5255004506824636
 		},
@@ -127,11 +283,49 @@
 		{
 			"year":"1970","change":"Valence","value":0.5959928496008249
 		}
+=======
+			{
+				"year":"1970",
+				"categories":"Danceability",
+				"value":0.5703700231779543
+			},
+			{	
+				"year":"1970",
+				"categories":"Energy",
+				"value":0.5848804275045061
+			},
+			{
+				"year":"1970",
+				"categories":"Speechiness",
+				"value":0.05314099922740132
+			},
+			{
+				"year":"1970",
+				"categories":"Acousticness",
+				"value":0.34104768243626077
+			},
+			{
+				"year":"1970",
+				"categories":"Instrumentalness",
+				"value":0.0483429000592326
+			},
+			{
+				"year":"1970",
+				"categories":"Liveness",
+				"value":0.19329343291269638
+			},
+			{
+				"year":"1970",
+				"categories":"Valence",
+				"value":0.6648517125933542
+			}
+>>>>>>> 804725c48d9001f74bb1c4da60c4ed9ffadcdc2a
 		]
 	},
 	{
 		"key":"1960",
 		"values":[
+<<<<<<< HEAD
 		{
 			"year":"1960","change":"Danceability","value":0.492168988660033
 		},
@@ -156,3 +350,43 @@
 		]
 	}
 ]
+=======
+			{
+				"year":"1960",
+				"categories":"Danceability",
+				"value":0.5305822726220786
+			},
+			{
+				"year":"1960",
+				"categories":"Energy",
+				"value":0.5111523721360789
+			},
+			{
+				"year":"1960",
+				"categories":"Speechiness",
+				"value":0.04931603795417716
+			},
+			{
+				"year":"1960",
+				"categories":"Acousticness",
+				"value":0.536790030710484
+			},
+			{
+				"year":"1960",
+				"categories":"Instrumentalness",
+				"value":0.05024343434390182
+			},
+			{
+				"year":"1960",
+				"categories":"Liveness",
+				"value":0.21916246239296444
+			},
+			{
+				"year":"1960",
+				"categories":"Valence",
+				"value":0.663424137931034
+			}
+		]
+	}
+]
+>>>>>>> 804725c48d9001f74bb1c4da60c4ed9ffadcdc2a
